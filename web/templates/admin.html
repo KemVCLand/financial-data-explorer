@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Administration - Financial Data Explorer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="dark-theme">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-chart-line me-2"></i>
+                <span class="fw-bold">Financial Data Explorer</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/"><i class="fas fa-home me-1"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dash/"><i class="fas fa-tachometer-alt me-1"></i> Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/admin"><i class="fas fa-database me-1"></i> Database Admin</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row mb-4 fade-in">
+            <div class="col-md-12">
+                <h1 class="display-5 fw-bold">
+                    <i class="fas fa-database me-2 text-accent"></i>Database Administration
+                </h1>
+                <p class="lead">Manage and update your financial data sources</p>
+            </div>
+        </div>
+        
+        {% if request.args.get('message') %}
+        <div class="alert alert-success alert-dismissible fade show fade-in" role="alert">
+            <i class="fas fa-check-circle me-2"></i>{{ request.args.get('message') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endif %}
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-sync-alt me-2"></i>Update Database</h5>
+                    </div>
+                    <div class="card-body">
+                        <form action="/update_data" method="post" class="mb-4">
+                            <div class="form-group mb-3">
+                                <h5 class="mb-3">Select tables to update:</h5>
+                                <div class="table-checkboxes">
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" name="tables" value="stock_daily_data" id="stock_daily_data">
+                                        <label class="form-check-label" for="stock_daily_data">
+                                            <i class="fas fa-chart-line me-1"></i> Stock Daily Data (Yahoo Finance)
+                                        </label>
+                                    </div>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" name="tables" value="market_quotes" id="market_quotes">
+                                        <label class="form-check-label" for="market_quotes">
+                                            <i class="fas fa-dollar-sign me-1"></i> Market Quotes (Finnhub)
+                                        </label>
+                                    </div>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" name="tables" value="company_profiles" id="company_profiles">
+                                        <label class="form-check-label" for="company_profiles">
+                                            <i class="fas fa-building me-1"></i> Company Profiles (FMP)
+                                        </label>
+                                    </div>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" name="tables" value="news_articles" id="news_articles">
+                                        <label class="form-check-label" for="news_articles">
+                                            <i class="fas fa-newspaper me-1"></i> News Articles
+                                        </label>
+                                    </div>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" name="tables" value="fundamental_data" id="fundamental_data">
+                                        <label class="form-check-label" for="fundamental_data">
+                                            <i class="fas fa-file-invoice-dollar me-1"></i> Fundamental Data
+                                        </label>
+                                    </div>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" name="tables" value="technical_indicators" id="technical_indicators">
+                                        <label class="form-check-label" for="technical_indicators">
+                                            <i class="fas fa-chart-bar me-1"></i> Technical Indicators
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-sync-alt me-2"></i>Update Selected Tables
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-database me-2"></i>Database Explorer</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="text-muted mb-4">View and explore the data stored in the database tables.</p>
+                        <button id="database-explorer-btn" class="btn btn-primary">
+                            <i class="fas fa-table me-2"></i>Open Database Explorer
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-broom me-2"></i>Database Maintenance</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="text-muted mb-4">Clean up the database by removing old tables and duplicate data.</p>
+                        <form action="/cleanup_database" method="post">
+                            <button type="submit" class="btn btn-warning" onclick="return confirm('This will remove old tables and duplicate data. Continue?');">
+                                <i class="fas fa-broom me-2"></i>Clean Database
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-info-circle me-2"></i>Database Info</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="icon-wrapper me-3">
+                                <i class="fas fa-table text-accent"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0">Tables</h6>
+                                <p class="mb-0 fs-4">{{ tables|length }}</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div class="icon-wrapper me-3">
+                                <i class="fas fa-clock text-accent"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0">Last Updated</h6>
+                                <p class="mb-0">{{ now().strftime('%Y-%m-%d %H:%M') }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="mb-0">
+                        <i class="fas fa-chart-line me-2"></i>Financial Data Explorer &copy; 2025
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add event listeners to table items
+            document.querySelectorAll('.table-item').forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove active class from all items
+                    document.querySelectorAll('.table-item').forEach(el => {
+                        el.classList.remove('active');
+                    });
+                    
+                    // Add active class to clicked item
+                    this.classList.add('active');
+                    
+                    // Load table data
+                    const tableName = this.getAttribute('data-table');
+                    loadTableData(tableName);
+                });
+            });
+            
+            // Table search functionality
+            document.getElementById('table-search').addEventListener('input', function(e) {
+                const searchTerm = e.target.value.toLowerCase();
+                const tableItems = document.querySelectorAll('.table-item');
+                
+                tableItems.forEach(item => {
+                    const tableName = item.textContent.toLowerCase();
+                    if (tableName.includes(searchTerm)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+            
+            // Apply accent color to elements
+            document.querySelectorAll('.text-accent').forEach(el => {
+                el.style.color = 'var(--accent-color)';
+            });
+        });
+        
+        // Helper function for current date/time
+        function now() {
+            return new Date();
+        }
+    </script>
+    
+    <style>
+        .icon-wrapper {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background-color: rgba(108, 92, 231, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        
+        .table-select-container {
+            max-height: 200px;
+            overflow-y: auto;
+            padding-right: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .table-container {
+            min-height: 400px;
+        }
+    </style>
+
+    <!-- Database Explorer Modal -->
+    <div class="modal fade" id="databaseExplorerModal" tabindex="-1" aria-labelledby="databaseExplorerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="databaseExplorerModalLabel">
+                        <i class="fas fa-database me-2"></i>Database Explorer
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="mb-3">
+                                <label for="table-list" class="form-label">Select Table:</label>
+                                <select id="table-list" class="form-select"></select>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="mb-0">Table: <span id="current-table-name"></span></h5>
+                                </div>
+                                <div class="card-body p-0">
+                                    <div id="table-data-container" class="table-responsive" style="max-height: 500px; overflow-y: auto;">
+                                        <div class="text-center my-5">
+                                            <p>Select a table to view data</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

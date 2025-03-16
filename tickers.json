@@ -1,0 +1,544 @@
+{
+  "tickers": [
+    {
+      "symbol": "SILVER",
+      "fundacion": "N/A",
+      "pais": "Global",
+      "resena": "Commodity de plata, metal precioso utilizado como inversión y en industria.",
+      "sector": "Commodities",
+      "subsector": "Metales Preciosos",
+      "anos_en_bolsa": "N/A",
+      "tipo": "Commodity"
+    },
+    {
+      "symbol": "GOLD",
+      "fundacion": "N/A",
+      "pais": "Global",
+      "resena": "Commodity de oro, metal precioso considerado refugio de valor.",
+      "sector": "Commodities",
+      "subsector": "Metales Preciosos",
+      "anos_en_bolsa": "N/A",
+      "tipo": "Commodity"
+    },
+    {
+      "symbol": "USOIL",
+      "fundacion": "N/A",
+      "pais": "Global",
+      "resena": "Petróleo crudo de Estados Unidos, commodity energético fundamental.",
+      "sector": "Commodities",
+      "subsector": "Energía",
+      "anos_en_bolsa": "N/A",
+      "tipo": "Commodity"
+    },
+    {
+      "symbol": "GBPUSD",
+      "fundacion": "N/A",
+      "pais": "Reino Unido/EE.UU.",
+      "resena": "Par de divisas que representa la relación entre la libra esterlina y el dólar estadounidense.",
+      "sector": "Forex",
+      "subsector": "Pares de Divisas",
+      "anos_en_bolsa": "N/A",
+      "tipo": "Forex"
+    },
+    {
+      "symbol": "EURUSD",
+      "fundacion": "N/A",
+      "pais": "Europa/EE.UU.",
+      "resena": "Par de divisas que representa la relación entre el euro y el dólar estadounidense.",
+      "sector": "Forex",
+      "subsector": "Pares de Divisas",
+      "anos_en_bolsa": "N/A",
+      "tipo": "Forex"
+    },
+    {
+      "symbol": "ETHUSD",
+      "fundacion": "2015",
+      "pais": "Global",
+      "resena": "Ethereum, segunda criptomoneda más grande por capitalización de mercado.",
+      "sector": "Criptomonedas",
+      "subsector": "Smart Contracts",
+      "anos_en_bolsa": "8",
+      "tipo": "Crypto"
+    },
+    {
+      "symbol": "BTCUSD",
+      "fundacion": "2009",
+      "pais": "Global",
+      "resena": "Bitcoin, la primera y más grande criptomoneda por capitalización de mercado.",
+      "sector": "Criptomonedas",
+      "subsector": "Almacén de Valor",
+      "anos_en_bolsa": "14",
+      "tipo": "Crypto"
+    },
+    {
+      "symbol": "SOLUSD",
+      "fundacion": "2020",
+      "pais": "Global",
+      "resena": "Solana, blockchain de alto rendimiento con transacciones rápidas y bajo costo.",
+      "sector": "Criptomonedas",
+      "subsector": "Smart Contracts",
+      "anos_en_bolsa": "3",
+      "tipo": "Crypto"
+    },
+    {
+      "symbol": "XRPUSD",
+      "fundacion": "2012",
+      "pais": "Global",
+      "resena": "XRP, criptomoneda enfocada en pagos internacionales y transferencias bancarias.",
+      "sector": "Criptomonedas",
+      "subsector": "Pagos",
+      "anos_en_bolsa": "11",
+      "tipo": "Crypto"
+    },
+    {
+      "symbol": "ADAUSD",
+      "fundacion": "2017",
+      "pais": "Global",
+      "resena": "Cardano, blockchain de tercera generación con enfoque académico y científico.",
+      "sector": "Criptomonedas",
+      "subsector": "Smart Contracts",
+      "anos_en_bolsa": "6",
+      "tipo": "Crypto"
+    },
+    {
+      "symbol": "VIX",
+      "fundacion": "1993",
+      "pais": "EE.UU.",
+      "resena": "Índice de Volatilidad, mide la volatilidad esperada del mercado de valores.",
+      "sector": "Índices",
+      "subsector": "Volatilidad",
+      "anos_en_bolsa": "30",
+      "tipo": "ETF"
+    },
+    {
+      "symbol": "NDQ",
+      "fundacion": "1971",
+      "pais": "EE.UU.",
+      "resena": "Nasdaq Composite, índice que incluye empresas tecnológicas principalmente.",
+      "sector": "Índices",
+      "subsector": "Tecnología",
+      "anos_en_bolsa": "52",
+      "tipo": "ETF"
+    },
+    {
+      "symbol": "SPX",
+      "fundacion": "1957",
+      "pais": "EE.UU.",
+      "resena": "S&P 500, índice de las 500 empresas más grandes de EE.UU.",
+      "sector": "Índices",
+      "subsector": "Amplio Mercado",
+      "anos_en_bolsa": "66",
+      "tipo": "ETF"
+    },
+    {
+      "symbol": "DXY",
+      "fundacion": "1973",
+      "pais": "EE.UU.",
+      "resena": "Índice del Dólar, mide el valor del dólar estadounidense frente a una canasta de divisas.",
+      "sector": "Índices",
+      "subsector": "Divisas",
+      "anos_en_bolsa": "50",
+      "tipo": "ETF"
+    },
+    {
+      "symbol": "DJI",
+      "fundacion": "1896",
+      "pais": "EE.UU.",
+      "resena": "Dow Jones Industrial Average, índice de 30 grandes empresas estadounidenses.",
+      "sector": "Índices",
+      "subsector": "Industrial",
+      "anos_en_bolsa": "127",
+      "tipo": "ETF"
+    },
+    {
+      "symbol": "VNET",
+      "fundacion": "1999",
+      "pais": "China",
+      "resena": "VNET Group, proveedor de servicios de centros de datos e internet en China.",
+      "sector": "Tecnología",
+      "subsector": "Servicios de Internet",
+      "anos_en_bolsa": "12",
+      "tipo": "Stock"
+    },
+    {
+      "symbol": "SMCI",
+      "fundacion": "1993",
+      "pais": "EE.UU.",
+      "resena": "Super Micro Computer, fabricante de servidores de alto rendimiento y soluciones de almacenamiento.",
+      "sector": "Tecnología",
+      "subsector": "Hardware",
+      "anos_en_bolsa": "16",
+      "tipo": "Stock"
+    },
+    {
+      "symbol": "NIO",
+      "fundacion": "2014",
+      "pais": "China",
+      "resena": "NIO Inc., fabricante de vehículos eléctricos inteligentes premium.",
+      "sector": "Consumo Discrecional",
+      "subsector": "Automóviles",
+      "anos_en_bolsa": "5",
+      "tipo": "Stock"
+    },
+    {
+      "symbol": "NVDA",
+      "fundacion": "1993",
+      "pais": "EE.UU.",
+      "resena": "NVIDIA Corporation, líder en diseño de GPU y tecnologías de IA.",
+      "sector": "Tecnología",
+      "subsector": "Semiconductores",
+      "anos_en_bolsa": "24",
+      "tipo": "Stock"
+    },
+    {
+      "symbol": "TSM",
+      "fundacion": "1987",
+      "pais": "Taiwán",
+      "resena": "Taiwan Semiconductor Manufacturing Company, mayor fabricante de semiconductores por contrato.",
+      "sector": "Tecnología",
+      "subsector": "Semiconductores",
+      "anos_en_bolsa": "26",
+      "tipo": "Stock"
+    },
+    {
+      "symbol": "AVGO",
+      "fundacion": "1961",
+      "pais": "EE.UU.",
+      "resena": "Broadcom Inc., diseñador y fabricante de semiconductores para comunicaciones.",
+      "sector": "Tecnología",
+      "subsector": "Semiconductores",
+      "anos_en_bolsa": "14",
+      "tipo": "Stock"
+    },
+    {
+      "symbol": "TSLA",
+      "fundacion": "2003",
+      "pais": "EE.UU.",
+      "resena": "Tesla, Inc., fabricante de vehículos eléctricos y soluciones de energía limpia.",
+      "sector": "Consumo Discrecional",
+      "subsector": "Automóviles",
+      "anos_en_bolsa": "13",
+      "tipo": "Stock"
+    },
+    {
+      "symbol": "INTC",
+      "fundacion": "1968",
+      "pais": "EE.UU.",
+      "resena": "Intel Corporation, pionero en fabricación de microprocesadores y chips.",
+      "sector": "Tecnología",
+      "subsector": "Semiconductores",
+      "anos_en_bolsa": "52",
+      "tipo": "Stock"
+    },
+    {
+      "symbol": "AAPL",
+      "fundacion": "1976",
+      "pais": "EE.UU.",
+      "resena": "Apple Inc., fabricante de productos electrónicos de consumo, software y servicios.",
+      "sector": "Tecnología",
+      "subsector": "Electrónica de Consumo",
+      "anos_en_bolsa": "42",
+      "tipo": "Stock"
+    },
+    {
+      "symbol": "AMD",
+      "fundacion": "1969",
+      "pais": "EE.UU.",
+      "resena": "Advanced Micro Devices, desarrollador de procesadores y tecnologías relacionadas.",
+      "sector": "Tecnología",
+      "subsector": "Semiconductores",
+      "anos_en_bolsa": "51",
+      "tipo": "Stock"
+    },
+    {
+      "symbol": "BRK.B",
+      "fundacion": "1839",
+      "pais": "EE.UU.",
+      "resena": "Berkshire Hathaway (Clase B), conglomerado multinacional dirigido por Warren Buffett.",
+      "sector": "Financiero",
+      "subsector": "Conglomerados",
+      "anos_en_bolsa": "27",
+      "tipo": "Stock"
+    },
+    {
+      "symbol": "BRK.A",
+      "fundacion": "1839",
+      "pais": "EE.UU.",
+      "resena": "Berkshire Hathaway (Clase A), conglomerado multinacional dirigido por Warren Buffett.",
+      "sector": "Financiero",
+      "subsector": "Conglomerados",
+      "anos_en_bolsa": "58",
+      "tipo": "Stock"
+    },
+    {
+      "symbol": "XIACF",
+      "fundacion": "2010",
+      "pais": "China",
+      "resena": "Xiaomi Corporation, fabricante de electrónica de consumo y productos inteligentes.",
+      "sector": "Tecnología",
+      "subsector": "Electrónica de Consumo",
+      "anos_en_bolsa": "5",
+      "tipo": "Stock"
+    },
+    {
+      "symbol": "MNDY",
+      "fundacion": "2012",
+      "pais": "Israel",
+      "resena": "Monday.com, plataforma de gestión de trabajo y colaboración en la nube.",
+      "sector": "Tecnología",
+      "subsector": "Software",
+      "anos_en_bolsa": "2",
+      "tipo": "Stock"
+    },
+    {
+      "symbol": "NTNX",
+      "fundacion": "2009",
+      "pais": "EE.UU.",
+      "resena": "Nutanix, proveedor de soluciones de computación en la nube y virtualización.",
+      "sector": "Tecnología",
+      "subsector": "Software",
+      "anos_en_bolsa": "7",
+      "tipo": "Stock"
+    },
+    {
+      "symbol": "ANET",
+      "fundacion": "2004",
+      "pais": "EE.UU.",
+      "resena": "Arista Networks, proveedor de soluciones de redes para centros de datos.",
+      "sector": "Tecnología",
+      "subsector": "Redes",
+      "anos_en_bolsa": "9",
+      "tipo": "Stock"
+    },
+    {
+      "symbol": "ASML",
+      "fundacion": "1984",
+      "pais": "Países Bajos",
+      "resena": "ASML Holding, fabricante de máquinas para la producción de chips semiconductores.",
+      "sector": "Tecnología",
+      "subsector": "Equipos Semiconductores",
+      "anos_en_bolsa": "28",
+      "tipo": "Stock"
+    },
+    {
+      "symbol": "HKXCF",
+      "fundacion": "2000",
+      "pais": "Hong Kong",
+      "resena": "Hong Kong Exchanges and Clearing, operador de bolsa de valores de Hong Kong.",
+      "sector": "Financiero",
+      "subsector": "Intercambios Financieros",
+      "anos_en_bolsa": "23",
+      "tipo": "Stock"
+    },
+    {
+      "symbol": "NIPNF",
+      "fundacion": "1952",
+      "pais": "Japón",
+      "resena": "Nidec Corporation, fabricante líder mundial de motores eléctricos.",
+      "sector": "Industrial",
+      "subsector": "Maquinaria Eléctrica",
+      "anos_en_bolsa": "26",
+      "tipo": "Stock"
+    },
+    {
+      "symbol": "RNECF",
+      "fundacion": "1928",
+      "pais": "Francia",
+      "resena": "Renault SA, fabricante de automóviles y vehículos comerciales.",
+      "sector": "Consumo Discrecional",
+      "subsector": "Automóviles",
+      "anos_en_bolsa": "95",
+      "tipo": "Stock"
+    },
+    {
+      "symbol": "BYDIF",
+      "fundacion": "1995",
+      "pais": "China",
+      "resena": "BYD Company, fabricante de vehículos eléctricos y baterías recargables.",
+      "sector": "Consumo Discrecional",
+      "subsector": "Automóviles",
+      "anos_en_bolsa": "21",
+      "tipo": "Stock"
+    },
+    {
+      "symbol": "MSTR",
+      "fundacion": "1989",
+      "pais": "EE.UU.",
+      "resena": "MicroStrategy, empresa de software de análisis de negocios con grandes inversiones en Bitcoin.",
+      "sector": "Tecnología",
+      "subsector": "Software",
+      "anos_en_bolsa": "25",
+      "tipo": "Stock"
+    },
+    {
+      "symbol": "CLS",
+      "fundacion": "1968",
+      "pais": "EE.UU.",
+      "resena": "Celestica Inc., proveedor de soluciones de fabricación electrónica.",
+      "sector": "Tecnología",
+      "subsector": "Servicios de Fabricación Electrónica",
+      "anos_en_bolsa": "26",
+      "tipo": "Stock"
+    },
+    {
+      "symbol": "SNOW",
+      "fundacion": "2012",
+      "pais": "EE.UU.",
+      "resena": "Snowflake Inc., plataforma de almacenamiento y análisis de datos en la nube.",
+      "sector": "Tecnología",
+      "subsector": "Software",
+      "anos_en_bolsa": "3",
+      "tipo": "Stock"
+    },
+    {
+      "symbol": "AMAT",
+      "fundacion": "1967",
+      "pais": "EE.UU.",
+      "resena": "Applied Materials, proveedor de equipos y servicios para la fabricación de semiconductores.",
+      "sector": "Tecnología",
+      "subsector": "Equipos Semiconductores",
+      "anos_en_bolsa": "51",
+      "tipo": "Stock"
+    },
+    {
+      "symbol": "LRCX",
+      "fundacion": "1980",
+      "pais": "EE.UU.",
+      "resena": "Lam Research, fabricante de equipos para la producción de semiconductores.",
+      "sector": "Tecnología",
+      "subsector": "Equipos Semiconductores",
+      "anos_en_bolsa": "40",
+      "tipo": "Stock"
+    },
+    {
+      "symbol": "MU",
+      "fundacion": "1978",
+      "pais": "EE.UU.",
+      "resena": "Micron Technology, fabricante de productos de memoria y almacenamiento de semiconductores.",
+      "sector": "Tecnología",
+      "subsector": "Semiconductores",
+      "anos_en_bolsa": "39",
+      "tipo": "Stock"
+    },
+    {
+      "symbol": "GOOGL",
+      "fundacion": "1998",
+      "pais": "EE.UU.",
+      "resena": "Alphabet Inc., matriz de Google, líder en inteligencia artificial y servicios en la nube.",
+      "sector": "Tecnología",
+      "subsector": "Internet",
+      "anos_en_bolsa": "19",
+      "tipo": "Stock"
+    },
+    {
+      "symbol": "MSFT",
+      "fundacion": "1975",
+      "pais": "EE.UU.",
+      "resena": "Microsoft Corporation, líder en software, servicios en la nube e inteligencia artificial.",
+      "sector": "Tecnología",
+      "subsector": "Software",
+      "anos_en_bolsa": "37",
+      "tipo": "Stock"
+    },
+    {
+      "symbol": "AMZN",
+      "fundacion": "1994",
+      "pais": "EE.UU.",
+      "resena": "Amazon.com, líder en comercio electrónico y servicios en la nube (AWS).",
+      "sector": "Consumo Discrecional",
+      "subsector": "Comercio Electrónico",
+      "anos_en_bolsa": "26",
+      "tipo": "Stock"
+    },
+    {
+      "symbol": "EQIX",
+      "fundacion": "1998",
+      "pais": "EE.UU.",
+      "resena": "Equinix, proveedor global de centros de datos y servicios de interconexión.",
+      "sector": "Bienes Raíces",
+      "subsector": "Centros de Datos",
+      "anos_en_bolsa": "22",
+      "tipo": "Stock"
+    },
+    {
+      "symbol": "DLR",
+      "fundacion": "2004",
+      "pais": "EE.UU.",
+      "resena": "Digital Realty Trust, REIT especializado en centros de datos y soluciones de colocación.",
+      "sector": "Bienes Raíces",
+      "subsector": "Centros de Datos",
+      "anos_en_bolsa": "18",
+      "tipo": "Stock"
+    },
+    {
+      "symbol": "ABB",
+      "fundacion": "1988",
+      "pais": "Suiza",
+      "resena": "ABB Ltd, líder en robótica, automatización industrial y tecnología de energía.",
+      "sector": "Industrial",
+      "subsector": "Equipos Eléctricos",
+      "anos_en_bolsa": "34",
+      "tipo": "Stock"
+    },
+    {
+      "symbol": "FANUY",
+      "fundacion": "1956",
+      "pais": "Japón",
+      "resena": "Fanuc Corporation, líder mundial en robótica industrial y sistemas CNC.",
+      "sector": "Industrial",
+      "subsector": "Robótica",
+      "anos_en_bolsa": "42",
+      "tipo": "Stock"
+    },
+    {
+      "symbol": "ISRG",
+      "fundacion": "1995",
+      "pais": "EE.UU.",
+      "resena": "Intuitive Surgical, fabricante de sistemas robóticos quirúrgicos Da Vinci.",
+      "sector": "Salud",
+      "subsector": "Equipos Médicos",
+      "anos_en_bolsa": "22",
+      "tipo": "Stock"
+    },
+    {
+      "symbol": "LMT",
+      "fundacion": "1995",
+      "pais": "EE.UU.",
+      "resena": "Lockheed Martin, empresa de defensa, seguridad y tecnología aeroespacial avanzada.",
+      "sector": "Industrial",
+      "subsector": "Defensa",
+      "anos_en_bolsa": "28",
+      "tipo": "Stock"
+    },
+    {
+      "symbol": "RTX",
+      "fundacion": "2020",
+      "pais": "EE.UU.",
+      "resena": "Raytheon Technologies, empresa de defensa y tecnología aeroespacial.",
+      "sector": "Industrial",
+      "subsector": "Defensa",
+      "anos_en_bolsa": "3",
+      "tipo": "Stock"
+    },
+    {
+      "symbol": "NOC",
+      "fundacion": "1939",
+      "pais": "EE.UU.",
+      "resena": "Northrop Grumman, empresa de defensa global y tecnología aeroespacial.",
+      "sector": "Industrial",
+      "subsector": "Defensa",
+      "anos_en_bolsa": "84",
+      "tipo": "Stock"
+    },
+    {
+      "symbol": "PLTR",
+      "fundacion": "2003",
+      "pais": "EE.UU.",
+      "resena": "Palantir Technologies, empresa de software de análisis de datos para defensa e inteligencia.",
+      "sector": "Tecnología",
+      "subsector": "Software",
+      "anos_en_bolsa": "3",
+      "tipo": "Stock"
+    }
+  ]
+}

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Data Explorer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-chart-line me-2"></i>
+                <span class="fw-bold">Financial Data Explorer</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/"><i class="fas fa-home me-1"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dash/"><i class="fas fa-tachometer-alt me-1"></i> Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin"><i class="fas fa-database me-1"></i> Database Admin</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row mb-5">
+            <div class="col-md-12 text-center fade-in">
+                <h1 class="display-4 fw-bold mb-3">
+                    <i class="fas fa-chart-line me-2 text-accent"></i>Financial Data Explorer
+                </h1>
+                <p class="lead mb-4">
+                    Plataforma avanzada para visualización y análisis de datos financieros en tiempo real
+                </p>
+                <div class="d-flex justify-content-center gap-3 mb-5">
+                    <a href="/dash/" class="btn btn-primary btn-lg">
+                        <i class="fas fa-tachometer-alt me-2"></i>Dashboard
+                    </a>
+                    <a href="/admin" class="btn btn-secondary btn-lg">
+                        <i class="fas fa-database me-2"></i>Administrar Datos
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 mb-4 fade-in" style="animation-delay: 0.2s;">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h2 class="mb-0"><i class="fas fa-chart-bar me-2"></i>Tickers Disponibles</h2>
+                        <div class="input-group" style="max-width: 300px;">
+                            <span class="input-group-text bg-transparent border-end-0">
+                                <i class="fas fa-search"></i>
+                            </span>
+                            <input type="text" id="ticker-search" class="form-control border-start-0" placeholder="Buscar ticker...">
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row" id="ticker-container">
+                            {% for ticker in tickers %}
+                            <div class="col-md-3 col-sm-6 mb-4 ticker-item fade-in" style="animation-delay: {{ loop.index0 * 0.05 }}s;" data-ticker="{{ ticker }}">
+                                <div class="card ticker-card h-100">
+                                    <div class="card-body d-flex flex-column">
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <h5 class="card-title mb-0">{{ ticker }}</h5>
+                                            <span class="badge bg-accent">Stock</span>
+                                        </div>
+                                        <div class="ticker-preview mt-2 mb-3">
+                                            <div class="returns-container p-2">
+                                                <h6 class="text-center mb-2"><i class="fas fa-chart-line me-1"></i> Retornos</h6>
+                                                <div class="d-flex justify-content-between returns-grid">
+                                                    <!-- Will be populated by JavaScript -->
+                                                    <div class="text-center mx-1">
+                                                        <div class="small text-muted fw-bold">YTD</div>
+                                                        <div class="fw-bold loading-placeholder">...</div>
+                                                    </div>
+                                                    <div class="text-center mx-1">
+                                                        <div class="small text-muted fw-bold">Quarter</div>
+                                                        <div class="fw-bold loading-placeholder">...</div>
+                                                    </div>
+                                                    <div class="text-center mx-1">
+                                                        <div class="small text-muted fw-bold">Year</div>
+                                                        <div class="fw-bold loading-placeholder">...</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mt-auto d-flex gap-2">
+                                            <a href="/dash/" class="btn btn-primary btn-sm w-100">
+                                                <i class="fas fa-chart-line me-1"></i> Dashboard
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4 fade-in" style="animation-delay: 0.4s;">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h3 class="mb-0"><i class="fas fa-chart-pie me-2"></i>Análisis de Mercado</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Accede a análisis detallados de mercado, tendencias y patrones para tomar decisiones informadas.</p>
+                        <div class="d-grid">
+                            <a href="/dash/" class="btn btn-primary">Ver Análisis</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h3 class="mb-0"><i class="fas fa-newspaper me-2"></i>Noticias Financieras</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Mantente al día con las últimas noticias financieras que afectan a tus inversiones y al mercado global.</p>
+                        <div class="d-grid">
+                            <a href="/dash/" class="btn btn-primary">Ver Noticias</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h3 class="mb-0"><i class="fas fa-database me-2"></i>Datos en Tiempo Real</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Accede a datos financieros en tiempo real de múltiples fuentes para un análisis completo y actualizado.</p>
+                        <div class="d-grid">
+                            <a href="/admin" class="btn btn-primary">Actualizar Datos</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ticker Info Modal -->
+    <div class="modal fade" id="tickerInfoModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ticker-modal-title">
+                        <i class="fas fa-info-circle me-2"></i>Ticker Info
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="ticker-modal-body">
+                    <!-- Ticker info will be loaded here -->
+                    <div class="text-center py-5">
+                        <div class="spinner-border text-accent" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <p class="mt-3">Cargando información del ticker...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="mb-0">
+                        <i class="fas fa-chart-line me-2"></i>Financial Data Explorer &copy; 2025
+                    </p>
+                    <div class="mt-2">
+                        <a href="#" class="text-decoration-none me-3"><i class="fab fa-github"></i></a>
+                        <a href="#" class="text-decoration-none me-3"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-decoration-none"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Añadir clase personalizada para el tema oscuro
+        document.body.classList.add('dark-theme');
+        
+        // Filtro de búsqueda para tickers
+        document.getElementById('ticker-search').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const tickerItems = document.querySelectorAll('.ticker-item');
+            
+            tickerItems.forEach(item => {
+                const ticker = item.getAttribute('data-ticker').toLowerCase();
+                if (ticker.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+        
+        // Clase para elementos con acento
+        document.querySelectorAll('.text-accent').forEach(el => {
+            el.style.color = 'var(--accent-color)';
+        });
+        
+        // Clase para badges con acento
+        document.querySelectorAll('.bg-accent').forEach(el => {
+            el.style.backgroundColor = 'var(--accent-color)';
+        });
+    </script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html> 
