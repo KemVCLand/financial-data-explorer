@@ -2,6 +2,10 @@
 
 Este proyecto recopila y almacena datos financieros de múltiples APIs para su análisis posterior. Está diseñado para ser modular y fácilmente extensible para añadir más fuentes de datos o funcionalidades.
 
+## Demo
+
+La aplicación está disponible en línea en: [https://github.com/KemVCLand/financial-data-explorer](https://github.com/KemVCLand/financial-data-explorer)
+
 ## Estructura del Proyecto
 
 ```
@@ -80,7 +84,11 @@ Este proyecto recopila y almacena datos financieros de múltiples APIs para su a
 
 ## Instalación
 
-1. Clona este repositorio
+1. Clona este repositorio:
+   ```bash
+   git clone https://github.com/KemVCLand/financial-data-explorer.git
+   cd financial-data-explorer
+   ```
 2. Crea un entorno virtual: `python -m venv venv39`
 3. Activa el entorno virtual:
    - Windows: `venv39\Scripts\activate`
